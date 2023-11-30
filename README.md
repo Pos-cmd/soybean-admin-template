@@ -5,102 +5,94 @@
 
 [![license](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE) ![](https://img.shields.io/github/stars/honghuangdc/soybean-admin) ![](https://img.shields.io/github/forks/honghuangdc/soybean-admin)
 
-## 注意 SoybeanAdmin 正在重构，全新 1.0 预计12月份期间发布
+## Attention : SoybeanAdmin est en cours de refonte, la toute nouvelle version 1.0 devrait être publiée courant décembre
 
 Soybean Admin v1.0 :
 
-- [x] 采用基于 pnpm 的 monorepo 管理项目
-- [x] 第三方 soybeanjs 的工具库直接抽离到项目中(ElegantRouter除外)，不再作为依赖
-- [x] 采用全新的路由插件 ElegantRouter
-- [x] 使用基于 ApiFox 的远程 mock 代替本地 mock
-- [x] 基于现有路由插件迁移至新路由插件的指南
-- [x] 代码实现遵循 SoybeanJS 的代码规范
-- [ ] 项目的 main 分支保留系统核心部分，示例页面和无关核心的插件移至 example 分支
-- [ ] 完整 1.0 版本的文档
+- [x] Utilisation d'un projet de gestion monorepo basé sur pnpm
+- [x] Extraction directe de la bibliothèque d'outils tierce soybeanjs dans le projet (à l'exception d'ElegantRouter), ne la considérant plus comme une dépendance
+- [x] Adoption du tout nouveau plugin de routage ElegantRouter
+- [x] Utilisation du mock distant basé sur ApiFox en remplacement du mock local
+- [x] Guide de migration du plugin de routage actuel vers le nouveau plugin de routage
+- [x] Respect des normes de code SoybeanJS
+- [ ] La branche principale du projet conserve la partie centrale du système, les pages d'exemple et les plugins non essentiels sont déplacés vers la branche example
+- [ ] Documentation complète pour la version 1.0
 
-  1.0 源代码：[v1.0-beta](https://github.com/honghuangdc/soybean-admin/tree/v1.0-beta)
+  Code source 1.0 : [v1.0-beta](https://github.com/honghuangdc/soybean-admin/tree/v1.0-beta)
 
-> 同时推出需要商业授权的 AntDesignVue 版本 和 ElementPlus 版本
+> Introduction simultanée des versions AntDesignVue et ElementPlus nécessitant une licence commerciale
 
 
+## Introduction
 
-## 简介
+[Soybean Admin](https://github.com/honghuangdc/soybean-admin) est un modèle d'administration clair et élégant pour les applications de gestion basées sur Vue3, Vite3, TypeScript, NaiveUI, Pinia et UnoCSS. Il utilise les technologies frontales les plus récentes, offre une configuration de thème riche, respecte des normes de code élevées, dispose d'un système de routage basé sur les fichiers et d'autorisations dynamiques basées sur Mock, offrant une solution frontale clé en main pour les applications de gestion, ainsi qu'une référence utile pour l'apprentissage.
 
-[Soybean Admin](https://github.com/honghuangdc/soybean-admin) 是一个基于 Vue3、Vite3、TypeScript、NaiveUI、Pinia 和 UnoCSS 的清新优雅的中后台模版，它使用了最新流行的前端技术栈，内置丰富的主题配置，有着极高的代码规范，基于文件的路由系统以及基于 Mock 的动态权限路由，开箱即用的中后台前端解决方案，也可用于学习参考。
+## Caractéristiques
 
-## 特性
+- **Dernières technologies frontales** : Utilisation des technologies frontales telles que Vue3/Vite, avec un gestionnaire de paquets npm efficace, pnpm.
+- **TypeScript** : Langage de programmation pour des applications JavaScript de niveau professionnel.
+- **Thème** : Possibilité de configurer des thèmes riches, un mode sombre et des couleurs de thème dynamiques basées sur UnoCss, un framework CSS atomique.
+- **Normes de code** : Nombreux plugins de normes et normes de code très élevées.
+- **Système de routage basé sur les fichiers** : Génère automatiquement des déclarations de routage, des imports de routage et des modules de routage en fonction des fichiers de page.
+- **Routes d'autorisation** : Propose deux modes de routage : statique côté frontend et dynamique côté backend, grâce à des routes dynamiques basées sur Mock pour une mise en œuvre rapide des routes dynamiques côté backend.
+- **Fonctions de requête** : Encapsulation complète de fonctions de requête basées sur Axios, offrant à la fois des fonctions de requête Promises et des hooks, avec un adaptateur pour la transformation des données de résultat de requête.
 
-- **最新流行技术栈**：使用 Vue3/Vite 等前端前沿技术开发, 使用高效率的 npm 包管理器 pnpm
-- **TypeScript**: 应用程序级 JavaScript 的语言
-- **主题**：丰富可配置的主题、暗黑模式，基于原子 css 框架 - UnoCss 的动态主题颜色
-- **代码规范**：丰富的规范插件及极高的代码规范
-- **文件路由系统**：基于文件的路由系统，根据页面文件自动生成路由声明、路由导入和路由模块
-- **权限路由**：提供前端静态和后端动态两种路由模式，基于 mock 的动态路由能快速实现后端动态路由
-- **请求函数**：基于 axios 的完善的请求函数封装，提供 Promise 和 hooks 两种请求函数，加入请求结果数据转换的适配器
+## Bibliothèque d'outils SoybeanJS
 
-## SoybeanJS 工具库
+- [@soybeanjs/cli](https://github.com/soybeanjs/cli) : Outil en ligne de commande SoybeanJS incluant des commandes pratiques telles que la publication, le git et la gestion des dépendances.
+- [@soybeanjs/changelog](https://github.com/soybeanjs/changelog) : Génère un changelog en fonction des tags git et des commits [exemple](./CHANGELOG.md)
+- [eslint-config-soybeanjs](https://github.com/soybeanjs/eslint-config) : Configuration prédéfinie ESLint pour SoybeanJS
+- [@soybeanjs/materials](https://github.com/soybeanjs/materials) : Répertoire de matériaux pour SoybeanJS
+- [@soybeanjs/vite-plugin-vue-page-route](https://github.com/soybeanjs/vite-plugin-vue-page-route) : Plugin de routage pour SoybeanAdmin
 
-- [@soybeanjs/cli](https://github.com/soybeanjs/cli): SoybeanJS 命令行工具，包含发布、git 和依赖等相关的实用命令
-- [@soybeanjs/changelog](https://github.com/soybeanjs/changelog): 根据 git tags 和 commits 生成 changelog [示例](./CHANGELOG.md)
-- [eslint-config-soybeanjs](https://github.com/soybeanjs/eslint-config): SoybeanJS 的 eslint 预设配置
-- [@soybeanjs/materials](https://github.com/soybeanjs/materials): SoybeanJS 的物料仓库
-- [@soybeanjs/vite-plugin-vue-page-route](https://github.com/soybeanjs/vite-plugin-vue-page-route): SoybeanAdmin 的路由插件
+## Projets dérivés de SoybeanAdmin
 
-## 基于 SoybeanAdmin 二次开发的项目
+- [electron-mock-admin](https://github.com/lixin59/electron-mock-api) : Système de gestion de Mock API pour aider les développeurs frontaux à implémenter rapidement des mocks d'interfaces.
+- [T-Shell](https://github.com/TheBlindM/T-Shell) : Émulateur de terminal et client SSH avec une interface configurables.
 
-- [electron-mock-admin](https://github.com/lixin59/electron-mock-api): 一个 Mock Api 管理系统，帮助前端开发伙伴快速实现接口的 mock。
-- [T-Shell](https://github.com/TheBlindM/T-Shell): 是一个可配置命令提示的终端模拟器和 SSH 客户端。
+## Aperçu en ligne
 
-## 在线预览
+- [Adresse de prévisualisation de Soybean Admin](https://admin.soybeanjs.cn/)
 
-- [Soybean Admin 预览地址](https://admin.soybeanjs.cn/)
+## Documentation
 
-## 文档
+- [Adresse de prévisualisation de la documentation du projet](https://admin-docs.soybeanjs.cn/)
 
-- [项目文档预览地址](https://admin-docs.soybeanjs.cn/)
 
-## 代码仓库
+## Référentiels de code
 
-| 仓库           | GitHub 地址                                                                   | gitee 镜像                                                                   | 预览                                                      |
-| -------------- | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | --------------------------------------------------------- |
-| soybean-admin  | [GitHub](https://github.com/honghuangdc/soybean-admin)                        | [gitee](https://gitee.com/honghuangdc/soybean-admin)                         | [预览](https://admin.soybeanjs.cn/)                       |
-| tauri 版       | [tauri 版](https://github.com/honghuangdc/soybean-admin/tree/tauri)           | [tauri 版](https://gitee.com/honghuangdc/soybean-admin/tree/tauri)           |                                                           |
-| 精简版         | [精简版](https://github.com/honghuangdc/soybean-admin/tree/thin)              | [精简版](https://gitee.com/honghuangdc/soybean-admin/tree/thin)              |                                                           |
-| 集成 fast-crud | [集成 fast-crud](https://github.com/honghuangdc/soybean-admin/tree/fast-crud) | [集成 fast-crud](https://gitee.com/honghuangdc/soybean-admin/tree/fast-crud) | [预览](http://fast-crud.docmirror.cn/soybean/#/crud/demo) |
+| Référentiel     | Lien GitHub                                                                   | Miroir Gitee                                                               | Aperçu                                                    |
+| --------------- | ----------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| soybean-admin   | [GitHub](https://github.com/honghuangdc/soybean-admin)                        | [Gitee](https://gitee.com/honghuangdc/soybean-admin)                      | [Aperçu](https://admin.soybeanjs.cn/)                       |
+| Version Tauri   | [Version Tauri](https://github.com/honghuangdc/soybean-admin/tree/tauri)     | [Version Tauri](https://gitee.com/honghuangdc/soybean-admin/tree/tauri) |                                                              |
+| Version allégée | [Version allégée](https://github.com/honghuangdc/soybean-admin/tree/thin)    | [Version allégée](https://gitee.com/honghuangdc/soybean-admin/tree/thin) |                                                              |
+| Intégration de fast-crud | [Intégration de fast-crud](https://github.com/honghuangdc/soybean-admin/tree/fast-crud) | [Intégration de fast-crud](https://gitee.com/honghuangdc/soybean-admin/tree/fast-crud) | [Aperçu](http://fast-crud.docmirror.cn/soybean/#/crud/demo) |
 
-## 更新日志
+## Journal des mises à jour
 
 [CHANGELOG](./CHANGELOG.md)
 
-## 后端服务
+## Services back-end
 
 - [soybean-admin-java](https://github.com/honghuangdc/soybean-admin-java)
 
-## 项目示例图
+## Captures d'écran du projet
 
-![](https://s2.loli.net/2022/05/16/keOtgFH27r9nqYS.png)
+![Capture d'écran 1](https://s2.loli.net/2022/05/16/keOtgFH27r9nqYS.png)
+![Capture d'écran 2](https://s2.loli.net/2022/05/18/bW7mftiQexkvSTG.png)
+![Capture d'écran 3](https://s2.loli.net/2022/05/16/uV5nzjb3gYptAEl.png)
+![Capture d'écran 4](https://s2.loli.net/2022/05/16/rSnNHLdpuvkKxWq.png)
+![Capture d'écran 5](https://s2.loli.net/2023/06/07/O39EKNa675FZIuS.png)
+![Capture d'écran 6](https://s2.loli.net/2022/05/18/Mt6YZqmDxO8v4uR.png)
+![Capture d'écran 7](https://s2.loli.net/2023/06/07/zhmWnFlPTfDpot8.png)
+![Capture d'écran 8](https://s2.loli.net/2022/05/16/VPl6Ru1iCAhLcS4.png)
+![Capture d'écran 9](https://s2.loli.net/2023/06/07/n6Dy1HXBvuPc9oT.png)
+![Capture d'écran 10](https://s2.loli.net/2022/06/07/rY8TyAftM5dxspv.png)
+![Capture d'écran 11](https://s2.loli.net/2022/06/07/5GNBAd31IzQVjLP.png)
+![Capture d'écran 12](https://s2.loli.net/2022/06/07/rRSG6mEZpujOACT.png)
+![Capture d'écran 13](https://s2.loli.net/2023/06/07/A5Nonc9vI6pB1lr.png)
+![Capture d'écran 14](https://s2.loli.net/2023/06/07/VwBjqEhTke3OxXF.png)
 
-![](https://s2.loli.net/2022/05/18/bW7mftiQexkvSTG.png)
-
-![](https://s2.loli.net/2022/05/16/uV5nzjb3gYptAEl.png)
-
-![](https://s2.loli.net/2022/05/16/rSnNHLdpuvkKxWq.png)
-
-![](https://s2.loli.net/2023/06/07/O39EKNa675FZIuS.png)
-
-![](https://s2.loli.net/2022/05/18/Mt6YZqmDxO8v4uR.png)
-
-![](https://s2.loli.net/2023/06/07/zhmWnFlPTfDpot8.png)
-
-![](https://s2.loli.net/2022/05/16/VPl6Ru1iCAhLcS4.png)
-
-![](https://s2.loli.net/2023/06/07/n6Dy1HXBvuPc9oT.png)
-
-![](https://s2.loli.net/2022/06/07/rY8TyAftM5dxspv.png)
-
-![](https://s2.loli.net/2022/06/07/5GNBAd31IzQVjLP.png)
-
-![](https://s2.loli.net/2022/06/07/rRSG6mEZpujOACT.png)
 
 <div align="center">
 	<img style="width:380px;margin-right:18px;border:1px solid #dedede;" src="https://s2.loli.net/2023/06/07/A5Nonc9vI6pB1lr.png" />
